@@ -1,20 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <entity-facade-xml type="demo">
-    <moqui.service.message.SystemMessageRemote systemMessageRemoteId="DEMO_SHOPIFY_PRODUCTS_REMOTE" systemMessageTypeId="ShopifyProductMessage" sendUrl="https://shopifyAPIusername:shopifyAPIpassword@StoreName.myshopify.com/admin/api/2022-07/products.json" productStoreId="ProductStoreId" username="shopifyAPIusername" password="shopifyAPIpassword"/>
-    <moqui.service.message.SystemMessageRemote systemMessageRemoteId="DEMO_SHOPIFY_PUT_PRODUCTS_REMOTE" systemMessageTypeId="ShopifyUpdateProductMessage" sendUrl="https://shopifyAPIusername:shopifyAPIpassword@StoreName.myshopify.com/admin/api/2022-07/products/" productStoreId="ProductStoreId" username="shopifyAPIusername" password="shopifyAPIpassword"/>
-    <moqui.service.message.SystemMessageRemote systemMessageRemoteId="DEMO_SHOPIFY_CREATE_COLLECTION_REMOTE" systemMessageTypeId="ShopifyCreateCollectionMessage" sendUrl="https://shopifyAPIusername:shopifyAPIpassword@StoreName.myshopify.com/admin/api/2022-07/custom_collections.json" productStoreId="ProductStoreId" username="shopifyAPIusername" password="shopifyAPIpassword"/>
-    <moqui.service.message.SystemMessageRemote systemMessageRemoteId="DEMO_SHOPIFY_DELETE_COLLECTION_REMOTE" systemMessageTypeId="ShopifyDeleteCollectionMessage" sendUrl="https://shopifyAPIusername:shopifyAPIpassword@StoreName.myshopify.com/admin/api/2022-07/custom_collections/" productStoreId="ProductStoreId" username="shopifyAPIusername" password="shopifyAPIpassword"/>
-    <moqui.service.message.SystemMessageRemote systemMessageRemoteId="DEMO_SHOPIFY_CREATE_COLLECT_REMOTE" systemMessageTypeId="ShopifyCreateCollectMessage" sendUrl="https://shopifyAPIusername:shopifyAPIpassword@StoreName.myshopify.com/admin/api/2022-07/collects.json" productStoreId="ProductStoreId" username="shopifyAPIusername" password="shopifyAPIpassword"/>
-    <moqui.service.message.SystemMessageRemote systemMessageRemoteId="DEMO_SHOPIFY_GET_COLLECTS_REMOTE" systemMessageTypeId="ShopifyGetCollectsMessage" sendUrl="https://shopifyAPIusername:shopifyAPIpassword@StoreName.myshopify.com/admin/api/2022-07/collects.json?collection_id=" productStoreId="ProductStoreId" username="shopifyAPIusername" password="shopifyAPIpassword"/>
-    <moqui.service.message.SystemMessageRemote systemMessageRemoteId="DEMO_SHOPIFY_DELETE_COLLECT_REMOTE" systemMessageTypeId="ShopifyDeleteCollectMessage" sendUrl="https://shopifyAPIusername:shopifyAPIpassword@StoreName.myshopify.com/admin/api/2022-07/collects/" productStoreId="ProductStoreId" username="shopifyAPIusername" password="shopifyAPIpassword"/>
-    <moqui.service.message.SystemMessageRemote systemMessageRemoteId="DEMO_SHOPIFY_GET_ORDERS_REMOTE" systemMessageTypeId="ShopifyGetOrdersMessage" sendUrl="https://shopifyAPIusername:shopifyAPIpassword@StoreName.myshopify.com/admin/api/2022-07/orders.json?financial_status=" productStoreId="ProductStoreId" username="shopifyAPIusername" password="shopifyAPIpassword"/>
-    <moqui.service.message.SystemMessageRemote systemMessageRemoteId="DEMO_SHOPIFY_SET_INVENTORY_REMOTE" systemMessageTypeId="ShopifySetInventoryMessage" sendUrl="https://shopifyAPIusername:shopifyAPIpassword@StoreName.myshopify.com/admin/api/2022-07/inventory_levels/set.json" productStoreId="ProductStoreId" username="shopifyAPIusername" password="shopifyAPIpassword"/>
-    <moqui.service.message.SystemMessageRemote systemMessageRemoteId="DEMO_SHOPIFY_PUT_CUSTOMER_REMOTE" systemMessageTypeId="ShopifyUpdateCustomerMessage" sendUrl="https://shopifyAPIusername:shopifyAPIpassword@StoreName.myshopify.com/admin/api/2022-07/customers/" productStoreId="ProductStoreId" username="shopifyAPIusername" password="shopifyAPIpassword"/>
-    <moqui.service.message.SystemMessageRemote systemMessageRemoteId="DEMO_SHOPIFY_CANCEL_ORDER_REMOTE" systemMessageTypeId="ShopifyCancelOrderMessage" sendUrl="https://shopifyAPIusername:shopifyAPIpassword@StoreName.myshopify.com/admin/api/2022-07/orders/" productStoreId="ProductStoreId" username="shopifyAPIusername" password="shopifyAPIpassword"/>
-    <moqui.service.message.SystemMessageRemote systemMessageRemoteId="DEMO_SHOPIFY_CALCULATE_REFUND_REMOTE" systemMessageTypeId="ShopifyCalculateRefundMessage" sendUrl="https://shopifyAPIusername:shopifyAPIpassword@StoreName.myshopify.com/admin/api/2022-07/orders/" productStoreId="ProductStoreId" username="shopifyAPIusername" password="shopifyAPIpassword"/>
-    <moqui.service.message.SystemMessageRemote systemMessageRemoteId="DEMO_SHOPIFY_REFUND_ORDER_REMOTE" systemMessageTypeId="ShopifyCreateRefundMessage" sendUrl="https://shopifyAPIusername:shopifyAPIpassword@StoreName.myshopify.com/admin/api/2022-07/orders/" productStoreId="ProductStoreId" username="shopifyAPIusername" password="shopifyAPIpassword"/>
-    <moqui.service.message.SystemMessageRemote systemMessageRemoteId="DEMO_SHOPIFY_CREATE_FULFILLMENT_REMOTE" systemMessageTypeId="ShopifyCreateFulfillmentMessage" sendUrl="https://shopifyAPIusername:shopifyAPIpassword@StoreName.myshopify.com/admin/api/2022-07/fulfillments.json" productStoreId="ProductStoreId" username="shopifyAPIusername" password="shopifyAPIpassword"/>
-    <moqui.service.message.SystemMessageRemote systemMessageRemoteId="DEMO_SHOPIFY_GET_ADDRESSES_REMOTE" systemMessageTypeId="ShopifyGetCustomerAddressesMessage" sendUrl="https://shopifyAPIusername:shopifyAPIpassword@StoreName.myshopify.com/admin/api/2022-07/customers/" productStoreId="ProductStoreId" username="shopifyAPIusername" password="shopifyAPIpassword"/>
-    <moqui.service.message.SystemMessageRemote systemMessageRemoteId="DEMO_SHOPIFY_GET_TRANSACTIONS_REMOTE" systemMessageTypeId="ShopifyGetOrderTransactionsMessage" sendUrl="https://shopifyAPIusername:shopifyAPIpassword@StoreName.myshopify.com/admin/api/2022-07/orders/" productStoreId="ProductStoreId" username="shopifyAPIusername" password="shopifyAPIpassword"/>
-    <moqui.service.message.SystemMessageRemote systemMessageRemoteId="DEMO_SHOPIFY_GET_FO_REMOTE" systemMessageTypeId="ShopifyGetFulfillmentOrderMessage" sendUrl="https://shopifyAPIusername:shopifyAPIpassword@StoreName.myshopify.com/admin/api/2022-07/orders/" productStoreId="ProductStoreId" username="shopifyAPIusername" password="shopifyAPIpassword"/>
+    <!-- Demo data in mantle-udm does not configure the Demo store with a facility -->
+    <mantle.product.store.ProductStoreFacility productStoreId="POPC_DEFAULT" facilityId="ZIRET_WH" fromDate="1485028800000" />
+
+    <!-- configuration for the demo store set up by Tailorsoft... possibly remove these values and let people enter their own -->
+    <moqui.service.message.SystemMessageRemote systemMessageRemoteId="ShopifyDemoRemote" systemMessageTypeId="ShopifySystemMessageType" 
+        productStoreId="POPC_DEFAULT" description="Remote for pushing and pulling data from the Shopify store" username="" password=""/>
+
+    <!-- Service jobs to download Product and Collection data from Shopify -->
+    <moqui.service.job.ServiceJob jobName="poll_shopify_products_download" description="Poll download Shopify Products"
+            serviceName="mantle.shopify.ShopifyProductServices.download#ShopifyProducts" cronExpression="0 0 * * * ?" paused="Y">
+        <parameters parameterName="systemMessageRemoteId" parameterValue="ShopifyDemoRemote"/>
+    </moqui.service.job.ServiceJob>
+    <moqui.service.job.ServiceJob jobName="poll_shopify_collections_download" description="Poll download Shopify Products"
+            serviceName="mantle.shopify.ShopifyProductServices.download#ShopifyCollections" cronExpression="0 0 * * * ?" paused="Y">
+        <parameters parameterName="systemMessageRemoteId" parameterValue="ShopifyDemoRemote"/>
+    </moqui.service.job.ServiceJob>
+
+    <!-- Service jobs to upload Product and Category data from Moqui to Shopify -->
+    <moqui.service.job.ServiceJob jobName="poll_shopify_products_upload" description="Poll upload products to Shopify"
+            serviceName="mantle.shopify.ShopifyProductServices.upload#MoquiStoreProducts" cronExpression="0 0 * * * ?" paused="Y">
+        <parameters parameterName="systemMessageRemoteId" parameterValue="ShopifyDemoRemote"/>
+    </moqui.service.job.ServiceJob>
+    <moqui.service.job.ServiceJob jobName="poll_shopify_categories_upload" description="Poll upload Shopify Store Categories"
+            serviceName="mantle.shopify.ShopifyProductServices.upload#MoquiStoreCategories" cronExpression="0 0 * * * ?" paused="Y">
+        <parameters parameterName="systemMessageRemoteId" parameterValue="ShopifyDemoRemote"/>
+    </moqui.service.job.ServiceJob>
+
+    <!-- poll the service to get the shopify orders once per 15 minutes -->
+    <moqui.service.job.ServiceJob jobName="poll_shopify_orders_download" description="Shopify poll orders and download new"
+            serviceName="mantle.shopify.ShopifyOrderServices.download#ShopifyOrders" cronExpression="0 0/15 * * * ?" paused="Y">
+        <parameters parameterName="systemMessageRemoteId" parameterValue="ShopifyDemoRemote"/>
+    </moqui.service.job.ServiceJob>
+
+    <!-- poll the service to upload queued inventory updates -->
+    <moqui.service.job.ServiceJob jobName="poll_shopify_inventory_upload" description="Poll Shopify inventory queue and upload"
+            serviceName="mantle.shopify.ShopifyProductServices.upload#ProductInventoryQueue" cronExpression="0 0/15 * * * ?" paused="Y">
+        <parameters parameterName="systemMessageRemoteId" parameterValue="ShopifyDemoRemote"/>
+    </moqui.service.job.ServiceJob>
+
+    <!-- Shopify Payment Gateway to configure in your store if you wish to use the payment gateway refund option -->
+    <moqui.basic.Enumeration description="Shopify Payments Gateway" enumId="PgtShopifyPayments" enumTypeId="PaymentGatewayType"/>
+
+    <mantle.account.method.PaymentGatewayConfig paymentGatewayConfigId="ShopifyPayments"
+                                                paymentGatewayTypeEnumId="PgtShopifyPayments" description="Shopify payments gateway config"
+                                                refundServiceName="mantle.shopify.ShopifyGatewayServices.send#GatewayRefund"/>
 </entity-facade-xml>

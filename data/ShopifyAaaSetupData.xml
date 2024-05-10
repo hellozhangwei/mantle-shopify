@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.service.message.SystemMessageType systemMessageTypeId="ShopifySystemMessageType" description="Shopify System Message Type"
+            consumeServiceName="mantle.shopify.ShopifyServices.consume#ShopifySystemMessage" 
+            sendServiceName="mantle.shopify.ShopifyServices.send#ShopifySystemMessage"/>
+
+    <!-- shopify creates default variant products and links them using this Enum -->
+    <moqui.basic.Enumeration enumTypeId="ProductFeatureType" enumId="ShopifyDefaultOption"  description="Title" />
+    <moqui.basic.Enumeration enumTypeId="ProductIdentificationType" enumId="PidtShopify" description="Shopify Product ID"/>
+    <moqui.basic.Enumeration enumTypeId="ProductIdentificationType" enumId="PidtInventoryItemShopify" description="Shopify Product Inventory Item ID"/>
+    <moqui.basic.Enumeration enumTypeId="ProductStoreSettingType" enumId="ShopifyStoreId" description="Shopify Store Id"/>
+    <moqui.basic.Enumeration enumTypeId="PartyIdType" enumId="PtidShopify" description="Shopify Party Identifier"/>
+    <moqui.basic.Enumeration enumTypeId="PartyIdType" enumId="PtidCarrierShopify" description="Shopify Carrier Party Identifier" />
+    <moqui.basic.Enumeration enumTypeId="SalesChannel" enumId="ScShopify" description="Shopify"/>
+    <moqui.basic.Enumeration enumTypeId="ShipmentMethod" enumId="ShMthFreeShip" description="Free shipping" />
+    <moqui.basic.Enumeration enumTypeId="ShipmentMethod" enumId="ShMthEconomy" description="Economy" />
+    <moqui.basic.Enumeration  enumTypeId="PaymentInstrument" enumId="PiShopPayInstallments" description="Shopify Shop Pay Installments" enumCode="shopify_installments"/>
+    <moqui.basic.Enumeration  enumTypeId="PaymentInstrument" enumId="PiShopifyPaid" description="Shopify Paid Order" enumCode="manual"/>
+
+    <!-- Shopify as Carrier when no carrier is configured -->
+    <mantle.party.Party partyId="SHOPIFY" partyTypeEnumId="PtyOrganization" externalId="shopify">
+        <organization organizationName="Shopify Inc."/>
+        <roles roleTypeId="Carrier"/>
+    </mantle.party.Party>
+    <mantle.shipment.carrier.CarrierShipmentMethod carrierPartyId="SHOPIFY" shipmentMethodEnumId="ShMthGround" sequenceNum="1"
+            description="Standard Shipping"/>
+    <mantle.shipment.carrier.CarrierShipmentMethod carrierPartyId="SHOPIFY" shipmentMethodEnumId="ShMthFreeShip" sequenceNum="2"
+            description="Free Shipping"/>
+    <mantle.shipment.carrier.CarrierShipmentMethod carrierPartyId="SHOPIFY" shipmentMethodEnumId="ShMthEconomy" sequenceNum="2"
+            description="Economy"/>
+
+    <!-- idValue is needed for the tracking_info.company on fulfilment message -->
+    <mantle.party.PartyIdentification partyIdTypeEnumId="PtidShopify" partyId="USPS" idValue="USPS" />
+    <mantle.party.PartyIdentification partyIdTypeEnumId="PtidShopify" partyId="UPS" idValue="UPS" />
+    <mantle.party.PartyIdentification partyIdTypeEnumId="PtidShopify" partyId="FedEx" idValue="FedEx" />
+    <mantle.party.PartyIdentification partyIdTypeEnumId="PtidShopify"  partyId="DHLX" idValue="DHL Express" />
+
+    <!-- idValue used to find the carrier from shippingLine.source -->
+    <mantle.party.PartyIdentification partyIdTypeEnumId="PtidCarrierShopify" partyId="SHOPIFY" idValue="shopify"/>
+    <mantle.party.PartyIdentification partyIdTypeEnumId="PtidCarrierShopify" partyId="USPS" idValue="usps" />
+    <mantle.party.PartyIdentification partyIdTypeEnumId="PtidCarrierShopify" partyId="UPS" idValue="ups_shipping" />
+</entity-facade-xml>
